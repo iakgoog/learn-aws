@@ -76,3 +76,20 @@ Availability and Annual Downtime
 > Performance and availability are linked\
 > ⁃ Poor performance leads to low availability\
 > ⁃ Good performance helps maintain availability
+
+<br>
+
+**Simple Queue Service**
+
+![Monolithic Architecture](img/Monolithic_Architecture.png)
+
+![Microservices Architecture](img/Microservices_Architecture.png)
+
+*Benefits of Microservices*
+> Easier updates\
+> Availabitlity\
+> Scalability
+
+![Microservices Architecture](img/Microservices_Architecture_1.png)
+
+
