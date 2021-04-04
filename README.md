@@ -92,4 +92,36 @@ Availability and Annual Downtime
 
 ![Microservices Architecture](img/Microservices_Architecture_1.png)
 
+<br>
 
+**Elastic Container Service**
+
+*Containers*
+> Behave like virtual machines\
+> Let you run multiple microservices on a single instance\
+> Processes running inside the container are isolated from the host
+
+*Docker*
+> Image contains everything the service needs\
+> Launch containers from an image\
+> Like launching EC2 instances from an AMI
+
+*Benefits of Containers - Ease of Deployment*
+> Build an image\
+> Deploy it to instances\
+> Launch containers from it
+
+*Benefits of Containers - Availability*
+> Having multiple containers on a single instance can give you redundancy
+
+*Elastic Container Service*
+> ECS clusters container EC2 instances\
+> ECS can store containers in an elastic container registry (ECR)
+
+*Elastic Container Service*
+> A task defines how to launch containers
+> ⁃ Image to use\
+> ⁃ CPU\
+> ⁃ Memory\
+> ⁃ Instance-to-container port mappings\
+> ⁃ Storage mappings
