@@ -25,3 +25,26 @@ Availability and Annual Downtime
 | :-------------- | :----------------: | :----------: | --------: |
 | 3 days 15 hours | 5 hours 45 minutes | About 1 hour | 5 minutes |
 
+**Architecting for 99.9% Availability**
+
+*Traditional Application*
+> Runs on Windows or Linux\
+> You can "life and shift" it to AWS without changing its code\
+> -- Example: SQL-backed web application\
+> How you design for availability depends on the architecture of the application
+
+*Web-based Video Processing Application*
+> Front end\
+> -- Web interface\
+> -- Video processing logic\
+> Back end\
+> -- SQL database
+
+![AWS Architecture](img/AWS_Architecture.png)
+
+*Calculating Availability - EC2*
+> The service level agreement (SLA) for each service includes its annual availability\
+> Availability of an EC2 instance is 90%\
+> Failure rate of each instance is 10%
+
+
