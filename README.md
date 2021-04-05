@@ -25,7 +25,7 @@ Table of Contents
 *Decide how much availability you need before designing your AWS environment*
 
 Availability and Annual Downtime
-| 99.0%           |       99.9%        |    99.99%    |   99.999% |
+|      99.0%      |       99.9%        |    99.99%    |  99.999%  |
 | :-------------: | :----------------: | :----------: | :-------: |
 | 3 days 15 hours | 5 hours 45 minutes | About 1 hour | 5 minutes |
 
@@ -58,11 +58,11 @@ Availability and Annual Downtime
 **Loose Coupling**
 
 *Loose vs. Tight Coupling*
-| Loose coupling                                         |                                      Tight Coupling |
-| ----------------------------------------------------: | :------------------------------------------------- |
+|                                         Loose coupling | Tight Coupling                                      |
+| -----------------------------------------------------: | :-------------------------------------------------- |
 | One component *doesn't* depend on a specific component | One component *does* depend on a specific component |
-| URL points to ELB                                      |                      URLpoints directly to instance |
-| One-to-many relationship                               |                             One-to-one relationship |
+|                                      URL points to ELB | URLpoints directly to instance                      |
+|                               One-to-many relationship | One-to-one relationship                             |
 
 *What About EFS?*
 > Elastic services are always composed of redundant components\
@@ -125,3 +125,58 @@ Availability and Annual Downtime
 > ⁃ Memory\
 > ⁃ Instance-to-container port mappings\
 > ⁃ Storage mappings
+
+<br>
+
+**Cloud Native Applications**
+
+> depend on a cloud service that can't be deployed on-promises\
+> ⁃ Examples: SQS, S3, DynamoDB\
+> "Services instead of servers"\
+> Availability not necessarily higher than traditional applications
+
+*Cloud Native Application Example*
+> Lambda ➔ Video processing\
+> S3 ➔ Web asset and video storage\
+> DynamoDB ➔ Database
+
+*Lambda*
+> Managed "serverless" compute service\
+> Supports many programming languages\
+> ⁃ C#\
+> ⁃ Java\
+> ⁃ Python\
+> ⁃ Go\
+> ⁃ PowerShell\
+> Availability is 99.95%
+
+*Simple Storage Service (S3)*
+> Unlimited file storage\
+> Static web hosting\
+> Availability is 99.99%
+
+*DynamoDB*
+> Managed, nonrelational database\
+> Global tables feature replicates tables across multiple regions\
+> Availability with global tables is 99.999%
+
+*Calculating Availability*
+> Multiply the availability of services\
+> ⁃ 99.95% × 99.9 × 99.999 = 99.85%
+
+*Cloud Native Architecture*
+|  Advantages | Disadvantages               |
+| ----------: | :-------------------------- |
+| Scalability | Cloud vendor lock-in        |
+| Performance | Slightly lower availability |
+Convenience
+
+*Improve Availiability by Using Multiple Regions*
+> Calculate the failure rate of each region\
+> ⁃ 100% − 99.85% = 0.15\
+> Multiply the failure rate of both regions\
+> ⁃ 0.15% × 0.15% = 0.0225%\
+> Subtract the product from 100%\
+> ⁃ 100% − 0.0225% ≈ **99.999%**
+
+
